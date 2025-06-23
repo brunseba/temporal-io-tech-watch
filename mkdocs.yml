@@ -111,10 +111,6 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Getting Started:
-    - Overview: getting-started/overview.md
-    - Prerequisites: getting-started/prerequisites.md
-    - Quick Start: getting-started/quick-start.md
   - Design & Architecture:
     - System Architecture: architecture/system-architecture.md
     - Security Design: architecture/security-design.md
@@ -127,12 +123,6 @@ nav:
     - Database Setup: implementation/database-setup.md
     - Temporal Deployment: implementation/temporal-deployment.md
     - Application Deployment: implementation/application-deployment.md
-  - Operations:
-    - Monitoring & Observability: operations/monitoring.md
-    - Backup & Recovery: operations/backup-recovery.md
-    - Troubleshooting: operations/troubleshooting.md
-    - Performance Tuning: operations/performance-tuning.md
-    - Health Checks: operations/health-checks.md
   - Development:
     - Workflow Development: development/workflow-development.md
     - Python SDK Guide: development/python-sdk.md
@@ -147,19 +137,13 @@ nav:
     - Security Best Practices: security/best-practices.md
   - GitOps & Deployment:
     - ArgoCD Setup: gitops/argocd-setup.md
-    - Helm Charts: gitops/helm-charts.md
     - Environment Management: gitops/environment-management.md
-    - Release Management: gitops/release-management.md
   - Reference:
     - Configuration Reference: reference/configuration.md
     - API Reference: reference/api.md
     - CLI Commands: reference/cli-commands.md
     - Troubleshooting Guide: reference/troubleshooting-guide.md
     - FAQ: reference/faq.md
-  - External Resources:
-    - Temporal Documentation: https://docs.temporal.io/
-    - Kubernetes Documentation: https://kubernetes.io/docs/
-    - Helm Documentation: https://helm.sh/docs/
 
 # Custom CSS (uncomment when assets are available)
 # extra_css:
