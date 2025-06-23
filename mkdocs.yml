@@ -1,0 +1,226 @@
+site_name: Temporal.io Enterprise Deployment Guide
+site_description: Comprehensive design and implementation guide for deploying Temporal.io in production Kubernetes environments
+site_author: Enterprise DevOps Team
+site_url: https://temporal-docs.example.com
+
+# Repository information
+repo_name: temporal-infrastructure
+repo_url: https://gitlab.example.com/infrastructure/temporal-deploy
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2024 Enterprise DevOps Team
+
+# Configuration
+theme:
+  name: material
+  language: en
+  custom_dir: docs/overrides
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.path
+    - navigation.indexes
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - content.action.edit
+    - content.action.view
+    - content.tooltips
+  icon:
+    repo: fontawesome/brands/git-alt
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+  # Git revision tracking:
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+      timezone: Europe/Paris
+      locale: en
+      fallback_to_build_date: true
+#  - git-committers:
+#      repository: brunseba/private-dns-zone
+#      branch: main
+#      token: !ENV [MKDOCS_GIT_COMMITTERS_APIKEY, GITHUB_TOKEN]
+  # Optional plugins (disabled temporarily):
+  # - mermaid2:
+  #     version: 10.4.0
+  # - minify:
+  #     minify_html: true
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - toc:
+      permalink: true
+
+# Page tree
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Overview: getting-started/overview.md
+    - Prerequisites: getting-started/prerequisites.md
+    - Quick Start: getting-started/quick-start.md
+  - Design & Architecture:
+    - System Architecture: architecture/system-architecture.md
+    - Security Design: architecture/security-design.md
+    - Network Architecture: architecture/network-architecture.md
+    - Database Design: architecture/database-design.md
+  - Implementation Guide:
+    - Complete Guide: temporal-design-implementation-guide.md
+    - Infrastructure Setup: implementation/infrastructure-setup.md
+    - Security Configuration: implementation/security-configuration.md
+    - Database Setup: implementation/database-setup.md
+    - Temporal Deployment: implementation/temporal-deployment.md
+    - Application Deployment: implementation/application-deployment.md
+  - Operations:
+    - Monitoring & Observability: operations/monitoring.md
+    - Backup & Recovery: operations/backup-recovery.md
+    - Troubleshooting: operations/troubleshooting.md
+    - Performance Tuning: operations/performance-tuning.md
+    - Health Checks: operations/health-checks.md
+  - Development:
+    - Workflow Development: development/workflow-development.md
+    - Python SDK Guide: development/python-sdk.md
+    - FastAPI Integration: development/fastapi-integration.md
+    - Testing Strategies: development/testing.md
+    - CI/CD Pipeline: development/cicd-pipeline.md
+  - Security:
+    - Authentication & Authorization: security/auth.md
+    - TLS Configuration: security/tls.md
+    - Secrets Management: security/secrets.md
+    - Network Policies: security/network-policies.md
+    - Security Best Practices: security/best-practices.md
+  - GitOps & Deployment:
+    - ArgoCD Setup: gitops/argocd-setup.md
+    - Helm Charts: gitops/helm-charts.md
+    - Environment Management: gitops/environment-management.md
+    - Release Management: gitops/release-management.md
+  - Reference:
+    - Configuration Reference: reference/configuration.md
+    - API Reference: reference/api.md
+    - CLI Commands: reference/cli-commands.md
+    - Troubleshooting Guide: reference/troubleshooting-guide.md
+    - FAQ: reference/faq.md
+  - External Resources:
+    - Temporal Documentation: https://docs.temporal.io/
+    - Kubernetes Documentation: https://kubernetes.io/docs/
+    - Helm Documentation: https://helm.sh/docs/
+
+# Custom CSS
+extra_css:
+  - assets/stylesheets/extra.css
+  - assets/stylesheets/temporal-theme.css
+
+# Custom JavaScript for enhanced functionality
+extra_javascript:
+  - assets/javascripts/extra.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/gitlab
+      link: https://gitlab.example.com/infrastructure/temporal-deploy
+      name: GitLab Repository
+    - icon: fontawesome/brands/docker
+      link: https://jfrog.example.com
+      name: Docker Registry
+    - icon: fontawesome/solid/chart-line
+      link: https://grafana.example.com
+      name: Monitoring Dashboard
+    - icon: fontawesome/solid/lock
+      link: https://vault.example.com
+      name: Vault Secrets
+  version:
+    provider: mike
+    default: latest
+  tags:
+    temporal: Temporal.io
+    kubernetes: Kubernetes
+    helm: Helm
+    security: Security
+    monitoring: Monitoring
+    postgresql: PostgreSQL
+    elasticsearch: Elasticsearch
+    argocd: ArgoCD
+    vault: HashiCorp Vault
+    authentik: Authentik SSO
+    python: Python
+    fastapi: FastAPI
+    gitops: GitOps
+    devops: DevOps
+    production: Production
+  analytics:
+    provider: google
+    property: !ENV [GOOGLE_ANALYTICS_KEY, ""]
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
