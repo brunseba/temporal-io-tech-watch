@@ -15,7 +15,6 @@ copyright: Copyright &copy; 2024 brunseba
 theme:
   name: material
   language: en
-  custom_dir: docs/overrides
   palette:
     - scheme: default
       primary: deep purple
@@ -162,16 +161,16 @@ nav:
     - Kubernetes Documentation: https://kubernetes.io/docs/
     - Helm Documentation: https://helm.sh/docs/
 
-# Custom CSS
-extra_css:
-  - assets/stylesheets/extra.css
-  - assets/stylesheets/temporal-theme.css
+# Custom CSS (uncomment when assets are available)
+# extra_css:
+#   - assets/stylesheets/extra.css
+#   - assets/stylesheets/temporal-theme.css
 
-# Custom JavaScript for enhanced functionality
-extra_javascript:
-  - assets/javascripts/extra.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+# Custom JavaScript for enhanced functionality (uncomment when assets are available)
+# extra_javascript:
+#   - assets/javascripts/extra.js
+#   - https://polyfill.io/v3/polyfill.min.js?features=es6
+#   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 # Extra
 extra:
