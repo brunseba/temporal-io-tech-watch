@@ -3,10 +3,9 @@ logs/
 *.log
 *.jnl
 
-# Docker volumes
-bind-config/
-bind-zones/
-bind-logs/
+# local folders
+workspace/
+tmp/
 
 # Environment files
 .env

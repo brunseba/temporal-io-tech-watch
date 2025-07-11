@@ -136,6 +136,7 @@ nav:
     - Network Policies: security/network-policies.md
     - Security Best Practices: security/best-practices.md
   - GitOps & Deployment:
+    - Helm Configuration: gitops/helm-configuration.md
     - ArgoCD Setup: gitops/argocd-setup.md
     - Environment Management: gitops/environment-management.md
   - Reference:
