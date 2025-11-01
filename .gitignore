@@ -44,3 +44,6 @@ Thumbs.db
 
 # Zone journal files
 *.jnl
+
+# Documentation exports
+docs/export/

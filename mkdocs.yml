@@ -33,11 +33,16 @@ theme:
     code: Roboto Mono
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
     - navigation.top
     - navigation.path
     - navigation.indexes
+    - navigation.tracking
+    - navigation.footer
+    - toc.follow
+    - toc.integrate
     - search.highlight
     - search.share
     - search.suggest
@@ -54,6 +59,7 @@ theme:
 plugins:
   - search:
       lang: en
+      separator: '[\s\-\.]+'
   # Git revision tracking:
   - git-revision-date-localized:
       enable_creation_date: true
@@ -61,6 +67,9 @@ plugins:
       timezone: Europe/Paris
       locale: en
       fallback_to_build_date: true
+      exclude:
+        - index.md
+        - export/*
 #  - git-committers:
 #      repository: brunseba/private-dns-zone
 #      branch: main
@@ -111,37 +120,45 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Design & Architecture:
+  
+  - Getting Started:
+    - What's New in 1.29: reference/whats-new.md
+    - Complete Implementation Guide: temporal-design-implementation-guide.md
+  
+  - Architecture & Design:
     - System Architecture: architecture/system-architecture.md
-    - Security Design: architecture/security-design.md
-    - Network Architecture: architecture/network-architecture.md
     - Database Design: architecture/database-design.md
-  - Implementation Guide:
-    - Complete Guide: temporal-design-implementation-guide.md
+    - Network Architecture: architecture/network-architecture.md
+    - Security Design: architecture/security-design.md
+  
+  - Implementation:
     - Infrastructure Setup: implementation/infrastructure-setup.md
-    - Security Configuration: implementation/security-configuration.md
     - Database Setup: implementation/database-setup.md
+    - Security Configuration: implementation/security-configuration.md
     - Temporal Deployment: implementation/temporal-deployment.md
     - Application Deployment: implementation/application-deployment.md
-    - Upgrade Guide: implementation/upgrade-guide.md
+    - Upgrade Guide (1.27→1.29): implementation/upgrade-guide.md
+  
   - Development:
     - Workflow Development: development/workflow-development.md
     - Python SDK Guide: development/python-sdk.md
     - FastAPI Integration: development/fastapi-integration.md
     - Testing Strategies: development/testing.md
     - CI/CD Pipeline: development/cicd-pipeline.md
+  
   - Security:
+    - Security Best Practices: security/best-practices.md
     - Authentication & Authorization: security/auth.md
     - TLS Configuration: security/tls.md
     - Secrets Management: security/secrets.md
     - Network Policies: security/network-policies.md
-    - Security Best Practices: security/best-practices.md
+  
   - GitOps & Deployment:
     - Helm Configuration: gitops/helm-configuration.md
     - ArgoCD Setup: gitops/argocd-setup.md
     - Environment Management: gitops/environment-management.md
+  
   - Reference:
-    - What's New: reference/whats-new.md
     - Configuration Reference: reference/configuration.md
     - API Reference: reference/api.md
     - CLI Commands: reference/cli-commands.md
