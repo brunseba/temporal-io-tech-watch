@@ -1,5 +1,5 @@
 site_name: Temporal.io Tech Watch
-site_description: Comprehensive Temporal.io technical documentation and implementation guide covering architecture, deployment, development workflows, and operational best practices
+site_description: Comprehensive Temporal.io 1.29.1 technical documentation and implementation guide covering architecture, deployment, upgrade procedures, development workflows, and operational best practices for enterprise Kubernetes environments
 site_author: brunseba
 site_url: https://brunseba.github.io/temporal-io-tech-watch/
 
@@ -9,7 +9,7 @@ repo_url: https://github.com/brunseba/temporal-io-tech-watch
 edit_uri: edit/main/docs/
 
 # Copyright
-copyright: Copyright &copy; 2024 brunseba
+copyright: Copyright &copy; 2024-2025 brunseba | Temporal.io 1.29.1 | Updated November 2025
 
 # Configuration
 theme:
@@ -178,21 +178,24 @@ extra:
     provider: mike
     default: latest
   tags:
-    temporal: Temporal.io
+    temporal: Temporal.io 1.29.1
     kubernetes: Kubernetes
-    helm: Helm
-    security: Security
-    monitoring: Monitoring
+    helm: Helm Charts
+    security: Enterprise Security
+    monitoring: Observability
     postgresql: PostgreSQL
     elasticsearch: Elasticsearch
     argocd: ArgoCD
     vault: HashiCorp Vault
     authentik: Authentik SSO
-    python: Python
+    python: Python SDK 1.18.2
     fastapi: FastAPI
     gitops: GitOps
     devops: DevOps
-    production: Production
+    production: Production Ready
+    upgrade: Upgrade Guide
+    nexus: Nexus
+    worker-versioning: Worker Versioning
   analytics:
     provider: google
     property: !ENV [GOOGLE_ANALYTICS_KEY, ""]
