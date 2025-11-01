@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
@@ -357,7 +357,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../gitops/argocd-setup/" class="md-tabs__link">
+        <a href="../../gitops/helm-configuration/" class="md-tabs__link">
           
   
   
@@ -379,7 +379,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../reference/configuration/" class="md-tabs__link">
+        <a href="../../reference/whats-new/" class="md-tabs__link">
           
   
   
@@ -1492,6 +1492,8 @@
       
         
       
+        
+      
     
     
     
@@ -1529,6 +1531,29 @@
             GitOps & Deployment
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitops/helm-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Helm Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1602,6 +1627,8 @@
       
         
       
+        
+      
     
     
     
@@ -1639,6 +1666,29 @@
             Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What's New
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2062,7 +2112,7 @@
 
 
   
-    <a href="https://github.com/brunseba/temporal-io-tech-watch/edit/main/docs/development/workflow-development.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/brunseba/temporal-io-tech-watch/edit/main/docs/development/workflow-development.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2119,11 +2169,11 @@
 <h4 id="1-deterministic-execution">1. Deterministic Execution<a class="headerlink" href="#1-deterministic-execution" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># ❌ Non-deterministic - Don&#39;t do this</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">class</span> <span class="nc">BadWorkflow</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">BadWorkflow</span><span class="p">:</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="kn">import</span> <span class="nn">random</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="kn">import</span> <span class="nn">datetime</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="c1"># Non-deterministic operations</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="n">random_value</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>  <span class="c1"># ❌ Non-deterministic</span>
@@ -2133,9 +2183,9 @@
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># ✅ Deterministic - Correct approach</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">class</span> <span class="nc">GoodWorkflow</span><span class="p">:</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">class</span><span class="w"> </span><span class="nc">GoodWorkflow</span><span class="p">:</span>
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        <span class="c1"># Use workflow time</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="n">current_time</span> <span class="o">=</span> <span class="n">workflow</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
@@ -2148,18 +2198,18 @@
 <a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Value: </span><span class="si">{</span><span class="n">random_value</span><span class="si">}</span><span class="s2">, Time: </span><span class="si">{</span><span class="n">current_time</span><span class="si">}</span><span class="s2">&quot;</span>
 <a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
 <a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="nd">@activity</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">generate_random_value</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    <span class="kn">import</span> <span class="nn">random</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">generate_random_value</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
 </code></pre></div>
 <h4 id="2-idempotent-operations">2. Idempotent Operations<a class="headerlink" href="#2-idempotent-operations" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">class</span> <span class="nc">IdempotentWorkflow</span><span class="p">:</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">IdempotentWorkflow</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_completed_steps</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrderResult</span><span class="p">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrderResult</span><span class="p">:</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="n">result</span> <span class="o">=</span> <span class="n">OrderResult</span><span class="p">(</span><span class="n">order_id</span><span class="o">=</span><span class="n">order_id</span><span class="p">)</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="c1"># Step 1: Validate order (idempotent)</span>
@@ -2199,9 +2249,9 @@
 <h2 id="workflow-patterns">Workflow Patterns<a class="headerlink" href="#workflow-patterns" title="Permanent link">&para;</a></h2>
 <h3 id="1-sequential-processing-pattern">1. Sequential Processing Pattern<a class="headerlink" href="#1-sequential-processing-pattern" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">class</span> <span class="nc">SequentialProcessingWorkflow</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">SequentialProcessingWorkflow</span><span class="p">:</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">ProcessingRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessingResult</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">ProcessingRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessingResult</span><span class="p">:</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="n">result</span> <span class="o">=</span> <span class="n">ProcessingResult</span><span class="p">(</span><span class="n">request_id</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="c1"># Step 1: Data validation</span>
@@ -2239,9 +2289,9 @@
 </code></pre></div>
 <h3 id="2-parallel-processing-pattern">2. Parallel Processing Pattern<a class="headerlink" href="#2-parallel-processing-pattern" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">class</span> <span class="nc">ParallelProcessingWorkflow</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">ParallelProcessingWorkflow</span><span class="p">:</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_request</span><span class="p">:</span> <span class="n">BatchRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BatchResult</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_request</span><span class="p">:</span> <span class="n">BatchRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BatchResult</span><span class="p">:</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="c1"># Process items in parallel</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">batch_request</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
@@ -2277,12 +2327,12 @@
 </code></pre></div>
 <h3 id="3-saga-pattern-distributed-transactions">3. Saga Pattern (Distributed Transactions)<a class="headerlink" href="#3-saga-pattern-distributed-transactions" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">class</span> <span class="nc">SagaWorkflow</span><span class="p">:</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">SagaWorkflow</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_compensations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Callable</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrderResult</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrderResult</span><span class="p">:</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="k">try</span><span class="p">:</span>
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>            <span class="c1"># Step 1: Reserve inventory</span>
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>            <span class="n">inventory_reservation</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reserve_inventory</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
@@ -2306,7 +2356,7 @@
 <a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_execute_compensations</span><span class="p">()</span>
 <a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>            <span class="k">raise</span>
 <a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">_reserve_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">InventoryReservation</span><span class="p">:</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_reserve_inventory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">InventoryReservation</span><span class="p">:</span>
 <a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>        <span class="n">reservation</span> <span class="o">=</span> <span class="k">await</span> <span class="n">workflow</span><span class="o">.</span><span class="n">execute_activity</span><span class="p">(</span>
 <a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>            <span class="n">reserve_inventory</span><span class="p">,</span>
 <a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>            <span class="n">order</span><span class="o">.</span><span class="n">items</span><span class="p">,</span>
@@ -2324,7 +2374,7 @@
 <a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>
 <a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>        <span class="k">return</span> <span class="n">reservation</span>
 <a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>
-<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">_process_payment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">,</span> <span class="n">inventory</span><span class="p">:</span> <span class="n">InventoryReservation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PaymentResult</span><span class="p">:</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_process_payment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">,</span> <span class="n">inventory</span><span class="p">:</span> <span class="n">InventoryReservation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PaymentResult</span><span class="p">:</span>
 <a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>        <span class="n">payment</span> <span class="o">=</span> <span class="k">await</span> <span class="n">workflow</span><span class="o">.</span><span class="n">execute_activity</span><span class="p">(</span>
 <a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>            <span class="n">charge_payment</span><span class="p">,</span>
 <a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>            <span class="n">PaymentRequest</span><span class="p">(</span>
@@ -2346,7 +2396,7 @@
 <a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a>
 <a id="__codelineno-4-69" name="__codelineno-4-69" href="#__codelineno-4-69"></a>        <span class="k">return</span> <span class="n">payment</span>
 <a id="__codelineno-4-70" name="__codelineno-4-70" href="#__codelineno-4-70"></a>
-<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">_ship_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">,</span> <span class="n">payment</span><span class="p">:</span> <span class="n">PaymentResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ShippingResult</span><span class="p">:</span>
+<a id="__codelineno-4-71" name="__codelineno-4-71" href="#__codelineno-4-71"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_ship_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">,</span> <span class="n">payment</span><span class="p">:</span> <span class="n">PaymentResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ShippingResult</span><span class="p">:</span>
 <a id="__codelineno-4-72" name="__codelineno-4-72" href="#__codelineno-4-72"></a>        <span class="k">return</span> <span class="k">await</span> <span class="n">workflow</span><span class="o">.</span><span class="n">execute_activity</span><span class="p">(</span>
 <a id="__codelineno-4-73" name="__codelineno-4-73" href="#__codelineno-4-73"></a>            <span class="n">ship_order</span><span class="p">,</span>
 <a id="__codelineno-4-74" name="__codelineno-4-74" href="#__codelineno-4-74"></a>            <span class="n">ShippingRequest</span><span class="p">(</span>
@@ -2357,7 +2407,7 @@
 <a id="__codelineno-4-79" name="__codelineno-4-79" href="#__codelineno-4-79"></a>            <span class="n">start_to_close_timeout</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
 <a id="__codelineno-4-80" name="__codelineno-4-80" href="#__codelineno-4-80"></a>        <span class="p">)</span>
 <a id="__codelineno-4-81" name="__codelineno-4-81" href="#__codelineno-4-81"></a>
-<a id="__codelineno-4-82" name="__codelineno-4-82" href="#__codelineno-4-82"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">_execute_compensations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-4-82" name="__codelineno-4-82" href="#__codelineno-4-82"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_execute_compensations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-4-83" name="__codelineno-4-83" href="#__codelineno-4-83"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute compensations in reverse order&quot;&quot;&quot;</span>
 <a id="__codelineno-4-84" name="__codelineno-4-84" href="#__codelineno-4-84"></a>        <span class="k">for</span> <span class="n">compensation</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_compensations</span><span class="p">):</span>
 <a id="__codelineno-4-85" name="__codelineno-4-85" href="#__codelineno-4-85"></a>            <span class="k">try</span><span class="p">:</span>
@@ -2367,15 +2417,15 @@
 </code></pre></div>
 <h3 id="4-long-running-process-with-signals">4. Long-Running Process with Signals<a class="headerlink" href="#4-long-running-process-with-signals" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">class</span> <span class="nc">LongRunningProcessWorkflow</span><span class="p">:</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">LongRunningProcessWorkflow</span><span class="p">:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_status</span> <span class="o">=</span> <span class="s2">&quot;initialized&quot;</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_pause_requested</span> <span class="o">=</span> <span class="kc">False</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_cancel_requested</span> <span class="o">=</span> <span class="kc">False</span>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span> <span class="o">=</span> <span class="mi">0</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
 <a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">ProcessConfig</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResult</span><span class="p">:</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">ProcessConfig</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessResult</span><span class="p">:</span>
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_status</span> <span class="o">=</span> <span class="s2">&quot;running&quot;</span>
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
 <a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        <span class="k">try</span><span class="p">:</span>
@@ -2414,22 +2464,22 @@
 <a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>            <span class="k">raise</span>
 <a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>
 <a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">signal</span>
-<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">pause</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">pause</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Pause the workflow&quot;&quot;&quot;</span>
 <a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_pause_requested</span> <span class="o">=</span> <span class="kc">True</span>
 <a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>
 <a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">signal</span>
-<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">resume</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">resume</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Resume the workflow&quot;&quot;&quot;</span>
 <a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_pause_requested</span> <span class="o">=</span> <span class="kc">False</span>
 <a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>
 <a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">signal</span>
-<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cancel the workflow&quot;&quot;&quot;</span>
 <a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_cancel_requested</span> <span class="o">=</span> <span class="kc">True</span>
 <a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a>
 <a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">query</span>
-<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>    <span class="k">def</span> <span class="nf">get_status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 <a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Get current workflow status&quot;&quot;&quot;</span>
 <a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a>        <span class="k">return</span> <span class="p">{</span>
 <a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a>            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_status</span><span class="p">,</span>
@@ -2441,9 +2491,9 @@
 <h2 id="advanced-workflow-techniques">Advanced Workflow Techniques<a class="headerlink" href="#advanced-workflow-techniques" title="Permanent link">&para;</a></h2>
 <h3 id="1-dynamic-workflows">1. Dynamic Workflows<a class="headerlink" href="#1-dynamic-workflows" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">class</span> <span class="nc">DynamicWorkflow</span><span class="p">:</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">DynamicWorkflow</span><span class="p">:</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">workflow_config</span><span class="p">:</span> <span class="n">WorkflowConfig</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WorkflowResult</span><span class="p">:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">workflow_config</span><span class="p">:</span> <span class="n">WorkflowConfig</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WorkflowResult</span><span class="p">:</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute a dynamically configured workflow&quot;&quot;&quot;</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="c1"># Parse workflow definition</span>
@@ -2475,7 +2525,7 @@
 <a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>            <span class="n">workflow_id</span><span class="o">=</span><span class="n">workflow_config</span><span class="o">.</span><span class="n">id</span>
 <a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>        <span class="p">)</span>
 <a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>
-<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">_execute_activity_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">WorkflowStep</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_execute_activity_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">WorkflowStep</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute a single activity step&quot;&quot;&quot;</span>
 <a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>        <span class="n">activity_func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_activity_function</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">activity_name</span><span class="p">)</span>
 <a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>
@@ -2489,7 +2539,7 @@
 <a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a>            <span class="p">)</span>
 <a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>        <span class="p">)</span>
 <a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>
-<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">_execute_parallel_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">WorkflowStep</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_execute_parallel_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">WorkflowStep</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
 <a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute multiple activities in parallel&quot;&quot;&quot;</span>
 <a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a>        <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a>        <span class="k">for</span> <span class="n">sub_step</span> <span class="ow">in</span> <span class="n">step</span><span class="o">.</span><span class="n">parallel_steps</span><span class="p">:</span>
@@ -2498,7 +2548,7 @@
 <a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a>
 <a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a>        <span class="k">return</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
 <a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a>
-<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">_execute_conditional_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">WorkflowStep</span><span class="p">,</span> <span class="n">previous_results</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_execute_conditional_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">WorkflowStep</span><span class="p">,</span> <span class="n">previous_results</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
 <a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute conditional logic&quot;&quot;&quot;</span>
 <a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a>        <span class="n">condition_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_evaluate_condition</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">condition</span><span class="p">,</span> <span class="n">previous_results</span><span class="p">)</span>
 <a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a>
@@ -2510,14 +2560,14 @@
 <a id="__codelineno-6-68" name="__codelineno-6-68" href="#__codelineno-6-68"></a>        <span class="k">return</span> <span class="kc">None</span>
 </code></pre></div>
 <h3 id="2-workflow-versioning">2. Workflow Versioning<a class="headerlink" href="#2-workflow-versioning" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">temporalio</span> <span class="kn">import</span> <span class="n">workflow</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">from</span> <span class="nn">temporalio.common</span> <span class="kn">import</span> <span class="n">SearchAttributeKey</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">temporalio</span><span class="w"> </span><span class="kn">import</span> <span class="n">workflow</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">temporalio.common</span><span class="w"> </span><span class="kn">import</span> <span class="n">SearchAttributeKey</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Version 1 of the workflow</span>
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="k">class</span> <span class="nc">OrderProcessingWorkflow</span><span class="p">:</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">OrderProcessingWorkflow</span><span class="p">:</span>
 <a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrderResult</span><span class="p">:</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrderResult</span><span class="p">:</span>
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        <span class="n">version</span> <span class="o">=</span> <span class="n">workflow</span><span class="o">.</span><span class="n">patched</span><span class="p">(</span><span class="s2">&quot;order-processing-v2&quot;</span><span class="p">)</span>
 <a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        <span class="k">if</span> <span class="n">version</span><span class="p">:</span>
@@ -2527,7 +2577,7 @@
 <a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>            <span class="c1"># Legacy version logic</span>
 <a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>            <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_v1</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
 <a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">_run_v1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrderResult</span><span class="p">:</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_run_v1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrderResult</span><span class="p">:</span>
 <a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Legacy workflow implementation&quot;&quot;&quot;</span>
 <a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>        <span class="c1"># Validate order</span>
 <a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>        <span class="n">validation</span> <span class="o">=</span> <span class="k">await</span> <span class="n">workflow</span><span class="o">.</span><span class="n">execute_activity</span><span class="p">(</span>
@@ -2545,7 +2595,7 @@
 <a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>
 <a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>        <span class="k">return</span> <span class="n">OrderResult</span><span class="p">(</span><span class="n">validation</span><span class="o">=</span><span class="n">validation</span><span class="p">,</span> <span class="n">payment</span><span class="o">=</span><span class="n">payment</span><span class="p">)</span>
 <a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>
-<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">_run_v2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrderResult</span><span class="p">:</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_run_v2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrderResult</span><span class="p">:</span>
 <a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;New workflow implementation with additional features&quot;&quot;&quot;</span>
 <a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>        <span class="c1"># Enhanced validation with fraud detection</span>
 <a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>        <span class="n">validation</span> <span class="o">=</span> <span class="k">await</span> <span class="n">workflow</span><span class="o">.</span><span class="n">execute_activity</span><span class="p">(</span>
@@ -2595,9 +2645,9 @@
 </code></pre></div>
 <h3 id="3-child-workflows">3. Child Workflows<a class="headerlink" href="#3-child-workflows" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">class</span> <span class="nc">ParentWorkflow</span><span class="p">:</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">ParentWorkflow</span><span class="p">:</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_request</span><span class="p">:</span> <span class="n">BatchProcessingRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BatchResult</span><span class="p">:</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_request</span><span class="p">:</span> <span class="n">BatchProcessingRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BatchResult</span><span class="p">:</span>
 <a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Parent workflow that spawns child workflows for each item&quot;&quot;&quot;</span>
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="c1"># Start child workflows for each item</span>
@@ -2645,9 +2695,9 @@
 <a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a>        <span class="p">)</span>
 <a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a>
 <a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a><span class="k">class</span> <span class="nc">ItemProcessingWorkflow</span><span class="p">:</span>
+<a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a><span class="k">class</span><span class="w"> </span><span class="nc">ItemProcessingWorkflow</span><span class="p">:</span>
 <a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">ProcessingItem</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ItemResult</span><span class="p">:</span>
+<a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">ProcessingItem</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ItemResult</span><span class="p">:</span>
 <a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Child workflow for processing individual items&quot;&quot;&quot;</span>
 <a id="__codelineno-8-56" name="__codelineno-8-56" href="#__codelineno-8-56"></a>
 <a id="__codelineno-8-57" name="__codelineno-8-57" href="#__codelineno-8-57"></a>        <span class="c1"># Validate item</span>
@@ -2692,12 +2742,12 @@
 </code></pre></div>
 <h2 id="error-handling-and-resilience">Error Handling and Resilience<a class="headerlink" href="#error-handling-and-resilience" title="Permanent link">&para;</a></h2>
 <h3 id="1-comprehensive-error-handling">1. Comprehensive Error Handling<a class="headerlink" href="#1-comprehensive-error-handling" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span> <span class="nn">temporalio.exceptions</span> <span class="kn">import</span> <span class="n">ApplicationError</span><span class="p">,</span> <span class="n">ActivityError</span><span class="p">,</span> <span class="n">ChildWorkflowError</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">temporalio.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApplicationError</span><span class="p">,</span> <span class="n">ActivityError</span><span class="p">,</span> <span class="n">ChildWorkflowError</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">class</span> <span class="nc">ResilientWorkflow</span><span class="p">:</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">ResilientWorkflow</span><span class="p">:</span>
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">ProcessingRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessingResult</span><span class="p">:</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">ProcessingRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessingResult</span><span class="p">:</span>
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        <span class="k">try</span><span class="p">:</span>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>            <span class="c1"># Critical operation with custom retry policy</span>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>            <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">workflow</span><span class="o">.</span><span class="n">execute_activity</span><span class="p">(</span>
@@ -2744,7 +2794,7 @@
 <a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handle_unexpected_error</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 <a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>            <span class="k">raise</span>
 <a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>
-<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">_handle_validation_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">ProcessingRequest</span><span class="p">,</span> <span class="n">error</span><span class="p">:</span> <span class="n">ApplicationError</span><span class="p">):</span>
+<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_handle_validation_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">ProcessingRequest</span><span class="p">,</span> <span class="n">error</span><span class="p">:</span> <span class="n">ApplicationError</span><span class="p">):</span>
 <a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Handle validation errors with notification&quot;&quot;&quot;</span>
 <a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>        <span class="k">await</span> <span class="n">workflow</span><span class="o">.</span><span class="n">execute_activity</span><span class="p">(</span>
 <a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>            <span class="n">send_validation_error_notification</span><span class="p">,</span>
@@ -2756,7 +2806,7 @@
 <a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>            <span class="n">start_to_close_timeout</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>        <span class="p">)</span>
 <a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>
-<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">_handle_business_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">ProcessingRequest</span><span class="p">,</span> <span class="n">error</span><span class="p">:</span> <span class="n">ApplicationError</span><span class="p">):</span>
+<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_handle_business_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">ProcessingRequest</span><span class="p">,</span> <span class="n">error</span><span class="p">:</span> <span class="n">ApplicationError</span><span class="p">):</span>
 <a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Handle business logic errors with escalation&quot;&quot;&quot;</span>
 <a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a>        <span class="k">await</span> <span class="n">workflow</span><span class="o">.</span><span class="n">execute_activity</span><span class="p">(</span>
 <a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>            <span class="n">escalate_business_error</span><span class="p">,</span>
@@ -2769,7 +2819,7 @@
 <a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a>            <span class="n">start_to_close_timeout</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a>        <span class="p">)</span>
 <a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a>
-<a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">_handle_system_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">ProcessingRequest</span><span class="p">,</span> <span class="n">error</span><span class="p">:</span> <span class="n">ActivityError</span><span class="p">):</span>
+<a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_handle_system_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">ProcessingRequest</span><span class="p">,</span> <span class="n">error</span><span class="p">:</span> <span class="n">ActivityError</span><span class="p">):</span>
 <a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Handle system errors with monitoring&quot;&quot;&quot;</span>
 <a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a>        <span class="k">await</span> <span class="n">workflow</span><span class="o">.</span><span class="n">execute_activity</span><span class="p">(</span>
 <a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a>            <span class="n">log_system_error</span><span class="p">,</span>
@@ -2784,15 +2834,15 @@
 </code></pre></div>
 <h3 id="2-circuit-breaker-pattern">2. Circuit Breaker Pattern<a class="headerlink" href="#2-circuit-breaker-pattern" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">class</span> <span class="nc">CircuitBreakerWorkflow</span><span class="p">:</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">CircuitBreakerWorkflow</span><span class="p">:</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_failure_count</span> <span class="o">=</span> <span class="mi">0</span>
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_last_failure_time</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_circuit_open</span> <span class="o">=</span> <span class="kc">False</span>
 <a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_circuit_timeout</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
 <a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">requests</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ExternalAPIRequest</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">APIResponse</span><span class="p">]:</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">requests</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ExternalAPIRequest</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">APIResponse</span><span class="p">]:</span>
 <a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
 <a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>        <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="n">requests</span><span class="p">:</span>
@@ -2836,7 +2886,7 @@
 <a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a>
 <a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a>        <span class="k">return</span> <span class="n">results</span>
 <a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a>
-<a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a>    <span class="k">def</span> <span class="nf">_is_circuit_open</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_is_circuit_open</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if circuit breaker should remain open&quot;&quot;&quot;</span>
 <a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_circuit_open</span><span class="p">:</span>
 <a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a>            <span class="k">return</span> <span class="kc">False</span>
@@ -2856,21 +2906,21 @@
 </code></pre></div>
 <h2 id="workflow-testing-and-debugging">Workflow Testing and Debugging<a class="headerlink" href="#workflow-testing-and-debugging" title="Permanent link">&para;</a></h2>
 <h3 id="1-unit-testing-workflows">1. Unit Testing Workflows<a class="headerlink" href="#1-unit-testing-workflows" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">import</span> <span class="nn">pytest</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kn">from</span> <span class="nn">temporalio.testing</span> <span class="kn">import</span> <span class="n">WorkflowEnvironment</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kn">from</span> <span class="nn">temporalio.worker</span> <span class="kn">import</span> <span class="n">Worker</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">temporalio.testing</span><span class="w"> </span><span class="kn">import</span> <span class="n">WorkflowEnvironment</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">temporalio.worker</span><span class="w"> </span><span class="kn">import</span> <span class="n">Worker</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">asyncio</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">test_order_processing_workflow</span><span class="p">():</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">test_order_processing_workflow</span><span class="p">():</span>
 <a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Test order processing workflow with mocked activities&quot;&quot;&quot;</span>
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
 <a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="c1"># Create test environment</span>
 <a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="k">async</span> <span class="k">with</span> <span class="n">WorkflowEnvironment</span><span class="p">()</span> <span class="k">as</span> <span class="n">env</span><span class="p">:</span>
 <a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>        <span class="c1"># Mock activities</span>
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>        <span class="k">async</span> <span class="k">def</span> <span class="nf">mock_validate_order</span><span class="p">(</span><span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ValidationResult</span><span class="p">:</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">mock_validate_order</span><span class="p">(</span><span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ValidationResult</span><span class="p">:</span>
 <a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>            <span class="k">return</span> <span class="n">ValidationResult</span><span class="p">(</span><span class="n">is_valid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="n">order</span><span class="o">.</span><span class="n">total_amount</span><span class="p">)</span>
 <a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>        <span class="k">async</span> <span class="k">def</span> <span class="nf">mock_process_payment</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">ProcessPaymentRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PaymentResult</span><span class="p">:</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">mock_process_payment</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">ProcessPaymentRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PaymentResult</span><span class="p">:</span>
 <a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>            <span class="k">return</span> <span class="n">PaymentResult</span><span class="p">(</span>
 <a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>                <span class="n">transaction_id</span><span class="o">=</span><span class="s2">&quot;test-txn-123&quot;</span><span class="p">,</span>
 <a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>                <span class="n">success</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -2907,7 +2957,7 @@
 <a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a>            <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">payment</span><span class="o">.</span><span class="n">transaction_id</span> <span class="o">==</span> <span class="s2">&quot;test-txn-123&quot;</span>
 <a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a>
 <a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">asyncio</span>
-<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">test_workflow_with_signals</span><span class="p">():</span>
+<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">test_workflow_with_signals</span><span class="p">():</span>
 <a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Test workflow that handles signals&quot;&quot;&quot;</span>
 <a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>
 <a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a>    <span class="k">async</span> <span class="k">with</span> <span class="n">WorkflowEnvironment</span><span class="p">()</span> <span class="k">as</span> <span class="n">env</span><span class="p">:</span>
@@ -2945,11 +2995,11 @@
 <h3 id="2-integration-testing">2. Integration Testing<a class="headerlink" href="#2-integration-testing" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">integration</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">asyncio</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">test_full_order_processing_integration</span><span class="p">():</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">test_full_order_processing_integration</span><span class="p">():</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Integration test with real Temporal server&quot;&quot;&quot;</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="kn">from</span> <span class="nn">temporalio.client</span> <span class="kn">import</span> <span class="n">Client</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="kn">from</span> <span class="nn">temporalio.worker</span> <span class="kn">import</span> <span class="n">Worker</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">temporalio.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">Client</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">temporalio.worker</span><span class="w"> </span><span class="kn">import</span> <span class="n">Worker</span>
 <a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
 <a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    <span class="c1"># Connect to test Temporal server</span>
 <a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    <span class="n">client</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;localhost:7233&quot;</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
@@ -3008,9 +3058,9 @@
 <h2 id="performance-optimization">Performance Optimization<a class="headerlink" href="#performance-optimization" title="Permanent link">&para;</a></h2>
 <h3 id="1-workflow-optimization-techniques">1. Workflow Optimization Techniques<a class="headerlink" href="#1-workflow-optimization-techniques" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nd">@workflow</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">class</span> <span class="nc">OptimizedWorkflow</span><span class="p">:</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">OptimizedWorkflow</span><span class="p">:</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="nd">@workflow</span><span class="o">.</span><span class="n">run</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_request</span><span class="p">:</span> <span class="n">BatchRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BatchResult</span><span class="p">:</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_request</span><span class="p">:</span> <span class="n">BatchRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BatchResult</span><span class="p">:</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        <span class="c1"># Technique 1: Batch similar operations</span>
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        <span class="n">validation_tasks</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">batch_request</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
@@ -3054,7 +3104,7 @@
 <a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a>            <span class="n">item_results</span><span class="o">=</span><span class="n">processing_results</span>
 <a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a>        <span class="p">)</span>
 <a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a>
-<a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">_process_chunk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chunk</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Item</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingResult</span><span class="p">]:</span>
+<a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_process_chunk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chunk</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Item</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ProcessingResult</span><span class="p">]:</span>
 <a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Process a chunk of items in parallel&quot;&quot;&quot;</span>
 <a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a>        <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a>        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">chunk</span><span class="p">:</span>
@@ -3072,7 +3122,7 @@
 </code></pre></div>
 <h3 id="2-activity-optimization">2. Activity Optimization<a class="headerlink" href="#2-activity-optimization" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nd">@activity</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">optimized_batch_processing</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">BatchProcessingRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BatchProcessingResult</span><span class="p">:</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">optimized_batch_processing</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">BatchProcessingRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BatchProcessingResult</span><span class="p">:</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Optimized activity for batch processing&quot;&quot;&quot;</span>
 <a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
 <a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="c1"># Use activity heartbeat for long-running operations</span>
@@ -3108,7 +3158,7 @@
 <a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>    <span class="p">)</span>
 <a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a>
 <a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a><span class="nd">@activity</span><span class="o">.</span><span class="n">defn</span>
-<a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">cached_external_api_call</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">APIRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">APIResponse</span><span class="p">:</span>
+<a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">cached_external_api_call</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">APIRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">APIResponse</span><span class="p">:</span>
 <a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Activity with intelligent caching&quot;&quot;&quot;</span>
 <a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a>
 <a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a>    <span class="c1"># Check cache first</span>
@@ -3328,7 +3378,7 @@
       <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.path", "navigation.indexes", "search.highlight", "search.share", "search.suggest", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.action.edit", "content.action.view", "content.tooltips"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": {"argocd": "ArgoCD", "authentik": "Authentik SSO", "devops": "DevOps", "elasticsearch": "Elasticsearch", "fastapi": "FastAPI", "gitops": "GitOps", "helm": "Helm", "kubernetes": "Kubernetes", "monitoring": "Monitoring", "postgresql": "PostgreSQL", "production": "Production", "python": "Python", "security": "Security", "temporal": "Temporal.io", "vault": "HashiCorp Vault"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       

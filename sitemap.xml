@@ -2,114 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/temporal-design-implementation-guide/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/architecture/database-design/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/architecture/network-architecture/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/architecture/security-design/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/architecture/system-architecture/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/development/cicd-pipeline/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/development/fastapi-integration/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/development/python-sdk/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/development/testing/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/development/workflow-development/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/gitops/argocd-setup/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/gitops/environment-management/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brunseba.github.io/temporal-io-tech-watch/gitops/helm-configuration/</loc>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/implementation/application-deployment/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/implementation/database-setup/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/implementation/infrastructure-setup/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/implementation/security-configuration/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/implementation/temporal-deployment/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/reference/api/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/reference/cli-commands/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/reference/configuration/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/reference/faq/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/reference/troubleshooting-guide/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brunseba.github.io/temporal-io-tech-watch/reference/whats-new/</loc>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/security/auth/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/security/best-practices/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/security/network-policies/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/security/secrets/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
     <url>
          <loc>https://brunseba.github.io/temporal-io-tech-watch/security/tls/</loc>
-         <lastmod>2025-06-23</lastmod>
+         <lastmod>2025-11-01</lastmod>
     </url>
 </urlset>
