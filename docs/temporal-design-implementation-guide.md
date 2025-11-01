@@ -567,9 +567,9 @@ helm install elasticsearch elastic/elasticsearch \
 server:
   enabled: true
   replicaCount: 3
-  image:
-    repository: temporalio/server
-    tag: 1.27.2
+    image:
+      repository: temporalio/server
+      tag: "1.29.1"
   
   resources:
     limits:

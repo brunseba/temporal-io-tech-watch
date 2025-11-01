@@ -68,7 +68,7 @@ graph TB
 server:
   image:
     repository: temporalio/server
-    tag: "1.20.0"
+    tag: "1.29.1"
     pullPolicy: IfNotPresent
   
   replicaCount: 3

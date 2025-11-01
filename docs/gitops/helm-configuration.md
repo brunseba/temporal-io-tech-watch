@@ -188,13 +188,13 @@ Configure all Temporal components to use `docker.proxyregistry.org` as the regis
 server:
   image:
     repository: docker.proxyregistry.org/temporalio/server
-    tag: 1.27.2
+    tag: 1.29.1
     pullPolicy: IfNotPresent
 
 admintools:
   image:
     repository: docker.proxyregistry.org/temporalio/admin-tools
-    tag: 1.27.2-tctl-1.18.2-cli-1.3.0
+    tag: 1.29.1-tctl-1.18.2-cli-1.3.0
     pullPolicy: IfNotPresent
 
 web:
@@ -723,7 +723,7 @@ imagePullSecrets:
 server:
   image:
     repository: docker.proxyregistry.org/temporalio/server
-    tag: 1.27.2
+    tag: 1.29.1
     pullPolicy: IfNotPresent
   
   securityContext:
@@ -789,7 +789,7 @@ web:
 admintools:
   image:
     repository: docker.proxyregistry.org/temporalio/admin-tools
-    tag: 1.27.2-tctl-1.18.2-cli-1.3.0
+    tag: 1.29.1-tctl-1.18.2-cli-1.3.0
     pullPolicy: IfNotPresent
   
   securityContext:

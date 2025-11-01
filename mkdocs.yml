@@ -140,6 +140,7 @@ nav:
     - ArgoCD Setup: gitops/argocd-setup.md
     - Environment Management: gitops/environment-management.md
   - Reference:
+    - What's New: reference/whats-new.md
     - Configuration Reference: reference/configuration.md
     - API Reference: reference/api.md
     - CLI Commands: reference/cli-commands.md

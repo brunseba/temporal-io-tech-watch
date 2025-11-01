@@ -86,7 +86,7 @@ requires-python = ">=3.11"
 
 dependencies = [
     # Temporal SDK
-    "temporalio>=1.7.0",
+    "temporalio>=1.18.2",
     
     # Async HTTP client
     "httpx>=0.25.0",

@@ -458,16 +458,18 @@ security:
       algorithm: "AES-256-GCM"
       key_rotation_interval: "90d"
       key_provider: "vault"
-    
+  encryption:
     # Data encryption in transit
     in_transit:
       enabled: true
-      min_tls_version: "1.2"
+      min_tls_version: "1.3"  # Updated to TLS 1.3 for Temporal 1.29+
       cipher_suites:
+        - "TLS_AES_256_GCM_SHA384"  # TLS 1.3 cipher suites
+        - "TLS_AES_128_GCM_SHA256"
+        - "TLS_CHACHA20_POLY1305_SHA256"
+        # TLS 1.2 fallback (if needed)
         - "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
         - "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
-        - "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
-        - "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
   
   # Audit configuration
   audit:
@@ -1444,4 +1446,296 @@ func (g *GDPRCompliance) LogComplianceEvent(event ComplianceEvent) {
 }
 ```
 
-This comprehensive security best practices guide provides enterprise-grade security controls, monitoring, and compliance frameworks for Temporal.io deployments, ensuring robust protection against threats while meeting regulatory requirements.
+## Temporal 1.29+ Security Best Practices
+
+### Updated for Latest Features (October 2025)
+
+#### 1. Eager Workflow Start Security Considerations
+
+With eager workflow start enabled by default in Temporal 1.29+, consider these security implications:
+
+```yaml
+# Security configuration for eager workflow start
+server:
+  config:
+    services:
+      frontend:
+        eagerWorkflowStartEnabled: true
+        # Rate limiting for eager starts to prevent abuse
+        rateLimit:
+          eagerWorkflowStart:
+            maxPerSecond: 100
+            burstSize: 200
+```
+
+**Best Practices:**
+- Monitor worker resource usage closely as eager starts increase worker load
+- Implement strict authentication on workflow start requests
+- Use task queue rate limiting to prevent DoS attacks
+- Validate workflow inputs before eager execution
+
+```python
+# Python SDK: Validate before eager start
+from temporalio.client import Client
+from temporalio import workflow
+
+@workflow.defn
+class SecureWorkflow:
+    @workflow.run
+    async def run(self, user_input: dict) -> str:
+        # Input validation is critical with eager start
+        if not self.validate_input(user_input):
+            raise ValueError("Invalid input detected")
+        return "processed"
+    
+    def validate_input(self, data: dict) -> bool:
+        # Implement strict validation
+        if not isinstance(data, dict):
+            return False
+        # Check for malicious patterns
+        return all(self.is_safe_value(v) for v in data.values())
+```
+
+#### 2. Worker Versioning Security
+
+With Worker Versioning (Safe Deploy) in public preview:
+
+```yaml
+# Secure worker versioning configuration
+worker:
+  versioning:
+    enabled: true
+    buildIDValidation:
+      enabled: true
+      allowedPattern: "^v\\d+\\.\\d+\\.\\d+$"  # Semantic versioning only
+    
+    # Security: Prevent unauthorized version registration
+    authorizationPolicy:
+      requireAuthentication: true
+      allowedRoles:
+        - "deployment-manager"
+        - "ci-cd-system"
+```
+
+**Best Practices:**
+- Restrict who can register new worker versions
+- Validate build IDs to prevent version spoofing
+- Audit all version registration events
+- Use immutable container images with digest-based references
+
+```python
+# Secure worker registration with build ID
+from temporalio.worker import Worker
+import hashlib
+import os
+
+# Generate verifiable build ID
+def generate_secure_build_id() -> str:
+    git_commit = os.getenv("GIT_COMMIT", "unknown")
+    build_time = os.getenv("BUILD_TIMESTAMP", "unknown")
+    
+    # Create tamper-resistant build ID
+    build_data = f"{git_commit}:{build_time}"
+    build_hash = hashlib.sha256(build_data.encode()).hexdigest()[:8]
+    
+    return f"v{VERSION}-{build_hash}"
+
+worker = Worker(
+    client,
+    task_queue="secure-queue",
+    workflows=[SecureWorkflow],
+    build_id=generate_secure_build_id(),
+    use_worker_versioning=True
+)
+```
+
+#### 3. Slimmed Docker Images Security
+
+Temporal 1.29+ uses slimmed Docker images. Update your security scanning:
+
+```yaml
+# Updated Dockerfile for slim images
+FROM temporalio/server:1.29.1 AS temporal-server
+
+# Security: Use distroless or minimal base
+FROM gcr.io/distroless/static-debian11:nonroot
+
+# Copy only necessary binaries
+COPY --from=temporal-server /usr/local/bin/temporal-server /usr/local/bin/
+COPY --from=temporal-server /etc/temporal/config /etc/temporal/config
+
+# Security context
+USER nonroot:nonroot
+WORKDIR /app
+
+ENTRYPOINT ["/usr/local/bin/temporal-server"]
+```
+
+**Security Scanning for Slim Images:**
+```bash
+# Scan with Trivy
+trivy image --severity HIGH,CRITICAL temporalio/server:1.29.1
+
+# Scan with Grype
+grype temporalio/server:1.29.1 --fail-on high
+
+# Generate SBOM
+syft temporalio/server:1.29.1 -o spdx-json > sbom.json
+```
+
+#### 4. Update-With-Start Security
+
+With Update-With-Start GA in 1.28+:
+
+```python
+from temporalio import workflow
+from temporalio.client import Client
+
+@workflow.defn
+class SecureOrderWorkflow:
+    @workflow.run
+    async def run(self, order_id: str) -> str:
+        return f"Processing order {order_id}"
+    
+    @workflow.update
+    async def update_order(self, new_data: dict) -> str:
+        # Security: Validate update permissions
+        if not self.has_update_permission():
+            raise PermissionError("Unauthorized update attempt")
+        
+        # Security: Validate update data
+        if not self.validate_update_data(new_data):
+            raise ValueError("Invalid update data")
+        
+        # Process update
+        self._order_data.update(new_data)
+        return "Updated"
+```
+
+**Best Practices:**
+- Implement authorization checks in update handlers
+- Validate all update inputs
+- Log all update attempts for audit
+- Use idempotency tokens to prevent replay attacks
+
+#### 5. Nexus Cross-Cluster Security
+
+For Nexus (GA in 1.27+) cross-cluster operations:
+
+```yaml
+# Secure Nexus configuration
+nexus:
+  endpoints:
+    - name: remote-cluster
+      url: https://remote.temporal.io:7233
+      
+      # mTLS authentication
+      tls:
+        enabled: true
+        clientCertFile: /etc/temporal/nexus/client.crt
+        clientKeyFile: /etc/temporal/nexus/client.key
+        serverCAFile: /etc/temporal/nexus/ca.crt
+        serverName: remote.temporal.io
+      
+      # Additional security
+      authentication:
+        type: "jwt"
+        jwt:
+          issuer: "local-cluster"
+          audience: "remote-cluster"
+          keyFile: /etc/temporal/nexus/jwt-private.key
+      
+      # Rate limiting
+      rateLimit:
+        maxCallsPerSecond: 10
+        burstSize: 20
+      
+      # Timeout protection
+      timeout:
+        callTimeout: 30s
+        maxRetries: 3
+```
+
+#### 6. Enhanced Metrics Security
+
+With updated metrics in 1.29:
+
+```yaml
+# Secure Prometheus configuration
+prometheus:
+  # Authentication for metrics endpoint
+  basicAuth:
+    enabled: true
+    username: metrics-reader
+    passwordSecretRef:
+      name: prometheus-auth
+      key: password
+  
+  # Metrics endpoint security
+  tls:
+    enabled: true
+    certFile: /etc/prometheus/tls.crt
+    keyFile: /etc/prometheus/tls.key
+  
+  # Limit metrics cardinality to prevent DoS
+  scrapeConfigs:
+    - job_name: 'temporal'
+      metrics_path: '/metrics'
+      metric_relabel_configs:
+        - source_labels: [__name__]
+          regex: 'temporal_.*'
+          action: keep
+        # Drop high-cardinality metrics
+        - source_labels: [workflow_id]
+          action: labeldrop
+```
+
+### Security Checklist for Temporal 1.29+
+
+- [ ] Update to TLS 1.3 for all connections
+- [ ] Enable eager workflow start with rate limiting
+- [ ] Implement worker versioning with authorization
+- [ ] Update container image scanning for slim images
+- [ ] Add validation for Update-With-Start operations
+- [ ] Configure mTLS for Nexus cross-cluster calls
+- [ ] Review and update metrics security configuration
+- [ ] Test security controls in staging environment
+- [ ] Update incident response procedures
+- [ ] Train team on new security features
+
+### Migration Security Considerations
+
+When upgrading from older versions:
+
+1. **Schema Migration Security:**
+```bash
+# Backup before migration
+temporal-sql-tool --plugin postgres12 \
+  --ep postgresql.example.com \
+  -u temporal_admin \
+  --db temporal \
+  backup --output-file temporal-backup-$(date +%Y%m%d).sql
+
+# Test migration in isolated environment first
+temporal-sql-tool --plugin postgres12 update-schema --dry-run
+
+# Apply with verification
+temporal-sql-tool --plugin postgres12 update-schema --verify
+```
+
+2. **Rolling Upgrade Security:**
+- Keep old and new versions compatible during transition
+- Monitor for security anomalies during upgrade
+- Have rollback plan with security context preserved
+- Verify all security policies after upgrade
+
+### Resources
+
+- [Temporal 1.29 Security Release Notes](https://github.com/temporalio/temporal/releases/tag/v1.29.1)
+- [What's New in Temporal.io](../reference/whats-new.md)
+- [Configuration Reference](../reference/configuration.md)
+- [Official Security Documentation](https://docs.temporal.io/security)
+
+---
+
+This comprehensive security best practices guide provides enterprise-grade security controls, monitoring, and compliance frameworks for Temporal.io deployments, ensuring robust protection against threats while meeting regulatory requirements. Updated for Temporal 1.29+ with latest features and recommendations.

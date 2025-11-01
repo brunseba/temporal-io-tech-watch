@@ -108,11 +108,34 @@ Before starting, ensure you have:
 - JFrog Artifactory or container registry
 - Basic understanding of Kubernetes concepts
 
+## What's New
+
+- **Temporal 1.29.1 (October 2025)**: Eager Workflow Start (GA), Task Queue Fairness, Slimmed Docker Images
+- **Temporal 1.28.x (June 2025)**: Update-With-Start (GA), Worker Versioning (Preview), Priority Task Queues
+- **Temporal 1.27.x (February 2025)**: Nexus (GA), Enhanced Safe Deploys
+- **Temporal 1.26.x (December 2024)**: Workflow Update API (GA)
+
+For detailed information, see [What's New in Temporal.io](reference/whats-new.md).
+
+## Temporal Cloud
+
+Temporal Cloud is a fully managed, hosted version of Temporal that eliminates operational overhead:
+
+- **No Infrastructure Management**: Temporal handles servers, databases, and scaling
+- **Global Availability**: Multi-region deployments with automatic failover
+- **Enterprise Security**: SOC 2 Type 2 certified, HIPAA compliant
+- **Built-in Observability**: Metrics, logging, and distributed tracing included
+- **Free Trial**: $1,000 in credits for new users
+
+Learn more at [temporal.io](https://temporal.io) or review our [self-hosted deployment guide](temporal-design-implementation-guide.md).
+
 ## Support and Contributing
 
 - **Documentation Issues**: Open an issue in the GitLab repository
 - **Feature Requests**: Submit through GitLab issues
 - **Security Issues**: Contact the security team directly
+- **Temporal Community**: [community.temporal.io](https://community.temporal.io/)
+- **Official Documentation**: [docs.temporal.io](https://docs.temporal.io/)
 
 ## Next Steps
 
