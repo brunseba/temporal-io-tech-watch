@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Comprehensive Temporal.io technical documentation and implementation guide covering architecture, deployment, development workflows, and operational best practices">
+        <meta name="description" content="Comprehensive Temporal.io 1.29.1 technical documentation and implementation guide covering architecture, deployment, upgrade procedures, development workflows, and operational best practices for enterprise Kubernetes environments">
       
       
         <meta name="author" content="brunseba">
@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://brunseba.github.io/temporal-io-tech-watch/architecture/database-design/">
       
       
-        <link rel="prev" href="../network-architecture/">
+        <link rel="prev" href="../system-architecture/">
       
       
-        <link rel="next" href="../../temporal-design-implementation-guide/">
+        <link rel="next" href="../network-architecture/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -106,7 +106,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Temporal.io Tech Watch" class="md-header__button md-logo" aria-label="Temporal.io Tech Watch" data-md-component="logo">
       
@@ -228,14 +230,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -263,6 +259,28 @@
   
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/whats-new/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
     
   
   
@@ -275,7 +293,7 @@
   
     
   
-  Design & Architecture
+  Architecture & Design
 
         </a>
       </li>
@@ -291,13 +309,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../temporal-design-implementation-guide/" class="md-tabs__link">
+        <a href="../../implementation/infrastructure-setup/" class="md-tabs__link">
           
   
   
     
   
-  Implementation Guide
+  Implementation
 
         </a>
       </li>
@@ -335,7 +353,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../security/auth/" class="md-tabs__link">
+        <a href="../../security/best-practices/" class="md-tabs__link">
           
   
   
@@ -379,7 +397,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../reference/whats-new/" class="md-tabs__link">
+        <a href="../../reference/configuration/" class="md-tabs__link">
           
   
   
@@ -396,7 +414,13 @@
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -413,7 +437,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Temporal.io Tech Watch" class="md-nav__button md-logo" aria-label="Temporal.io Tech Watch" data-md-component="logo">
       
@@ -464,6 +490,110 @@
       
   
   
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What's New in 1.29
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../temporal-design-implementation-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Implementation Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -495,15 +625,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Design & Architecture
+    Architecture & Design
     
   </span>
   
@@ -511,10 +641,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Design & Architecture
+            Architecture & Design
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -531,52 +661,6 @@
   
   <span class="md-ellipsis">
     System Architecture
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../security-design/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Security Design
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Network Architecture
     
   </span>
   
@@ -1165,6 +1249,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1193,8 +1323,6 @@
       
         
       
-        
-      
     
     
     
@@ -1210,15 +1338,15 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Implementation Guide
+    Implementation
     
   </span>
   
@@ -1226,35 +1354,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Implementation Guide
+            Implementation
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../temporal-design-implementation-guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Complete Guide
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1286,12 +1391,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../implementation/security-configuration/" class="md-nav__link">
+      <a href="../../implementation/database-setup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Security Configuration
+    Database Setup
     
   </span>
   
@@ -1309,12 +1414,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../implementation/database-setup/" class="md-nav__link">
+      <a href="../../implementation/security-configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Database Setup
+    Security Configuration
     
   </span>
   
@@ -1383,7 +1488,7 @@
   
   
   <span class="md-ellipsis">
-    Upgrade Guide
+    Upgrade Guide (1.27→1.29)
     
   </span>
   
@@ -1435,10 +1540,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1451,8 +1556,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Development
           </label>
@@ -1614,10 +1719,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -1630,12 +1735,35 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Security
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security Best Practices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1729,29 +1857,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../security/best-practices/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Security Best Practices
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1789,10 +1894,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -1805,8 +1910,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             GitOps & Deployment
           </label>
@@ -1907,8 +2012,6 @@
       
         
       
-        
-      
     
     
     
@@ -1924,10 +2027,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -1940,35 +2043,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/whats-new/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    What's New
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -2098,545 +2178,6 @@
                 </div>
               </div>
             
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#database-architecture-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Architecture Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#postgresql-database-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      PostgreSQL Database Design
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="PostgreSQL Database Design">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#primary-database-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Primary Database Configuration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Primary Database Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#high-availability-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      High Availability Setup
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#postgresql-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      PostgreSQL Configuration
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#database-schema-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Schema Design
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Database Schema Design">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#temporal-default-store-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      Temporal Default Store Schema
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#temporal-visibility-store-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      Temporal Visibility Store Schema
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#partitioning-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Partitioning Strategy
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Partitioning Strategy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#time-based-partitioning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Time-based Partitioning
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance-optimization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance Optimization
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Performance Optimization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#index-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Index Strategy
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#query-optimization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Query Optimization
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#elasticsearch-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Elasticsearch Configuration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Elasticsearch Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cluster-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cluster Setup
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Cluster Setup">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#elasticsearch-cluster-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Elasticsearch Cluster Configuration
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#index-templates-and-mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Index Templates and Mappings
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Index Templates and Mappings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#temporal-visibility-index-template" class="md-nav__link">
-    <span class="md-ellipsis">
-      Temporal Visibility Index Template
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#index-lifecycle-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      Index Lifecycle Management
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#redis-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Redis Configuration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Redis Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#caching-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Caching Strategy
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Caching Strategy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#redis-cluster-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Redis Cluster Setup
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-management-strategies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Management Strategies
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Data Management Strategies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#backup-and-recovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backup and Recovery
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Backup and Recovery">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#continuous-backup-with-pgbackrest" class="md-nav__link">
-    <span class="md-ellipsis">
-      Continuous Backup with pgBackRest
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#point-in-time-recovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      Point-in-Time Recovery
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-retention-policies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Retention Policies
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Data Retention Policies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#automated-data-cleanup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Automated Data Cleanup
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-migration-and-upgrades" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Migration and Upgrades
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Data Migration and Upgrades">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#schema-migration-framework" class="md-nav__link">
-    <span class="md-ellipsis">
-      Schema Migration Framework
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#performance-monitoring-and-optimization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance Monitoring and Optimization
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Performance Monitoring and Optimization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#database-metrics-collection" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Metrics Collection
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Database Metrics Collection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#postgresql-monitoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      PostgreSQL Monitoring
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance-tuning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance Tuning
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Performance Tuning">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#slow-query-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Slow Query Analysis
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#index-usage-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Index Usage Analysis
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#disaster-recovery-and-high-availability" class="md-nav__link">
-    <span class="md-ellipsis">
-      Disaster Recovery and High Availability
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Disaster Recovery and High Availability">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#database-failover-procedures" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Failover Procedures
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Database Failover Procedures">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#automated-failover-with-patroni" class="md-nav__link">
-    <span class="md-ellipsis">
-      Automated Failover with Patroni
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cross-region-data-replication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cross-Region Data Replication
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Cross-Region Data Replication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#logical-replication-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Logical Replication Setup
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recovery-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recovery Testing
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Recovery Testing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#automated-recovery-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Automated Recovery Testing
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
             
           
           
@@ -3693,12 +3234,52 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../system-architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: System Architecture">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                System Architecture
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../network-architecture/" class="md-footer__link md-footer__link--next" aria-label="Next: Network Architecture">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Network Architecture
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024 brunseba
+      Copyright &copy; 2024-2025 brunseba | Temporal.io 1.29.1 | Updated November 2025
     </div>
   
   
@@ -3757,7 +3338,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.path", "navigation.indexes", "search.highlight", "search.share", "search.suggest", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.action.edit", "content.action.view", "content.tooltips"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": {"argocd": "ArgoCD", "authentik": "Authentik SSO", "devops": "DevOps", "elasticsearch": "Elasticsearch", "fastapi": "FastAPI", "gitops": "GitOps", "helm": "Helm", "kubernetes": "Kubernetes", "monitoring": "Monitoring", "postgresql": "PostgreSQL", "production": "Production", "python": "Python", "security": "Security", "temporal": "Temporal.io", "vault": "HashiCorp Vault"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.path", "navigation.indexes", "navigation.tracking", "navigation.footer", "toc.follow", "toc.integrate", "search.highlight", "search.share", "search.suggest", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.action.edit", "content.action.view", "content.tooltips"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": {"argocd": "ArgoCD", "authentik": "Authentik SSO", "devops": "DevOps", "elasticsearch": "Elasticsearch", "fastapi": "FastAPI", "gitops": "GitOps", "helm": "Helm Charts", "kubernetes": "Kubernetes", "monitoring": "Observability", "nexus": "Nexus", "postgresql": "PostgreSQL", "production": "Production Ready", "python": "Python SDK 1.18.2", "security": "Enterprise Security", "temporal": "Temporal.io 1.29.1", "upgrade": "Upgrade Guide", "vault": "HashiCorp Vault", "worker-versioning": "Worker Versioning"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>

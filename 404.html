@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Comprehensive Temporal.io technical documentation and implementation guide covering architecture, deployment, development workflows, and operational best practices">
+        <meta name="description" content="Comprehensive Temporal.io 1.29.1 technical documentation and implementation guide covering architecture, deployment, upgrade procedures, development workflows, and operational best practices for enterprise Kubernetes environments">
       
       
         <meta name="author" content="brunseba">
@@ -95,7 +95,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="/temporal-io-tech-watch/." title="Temporal.io Tech Watch" class="md-header__button md-logo" aria-label="Temporal.io Tech Watch" data-md-component="logo">
       
@@ -217,14 +219,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -256,13 +252,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="/temporal-io-tech-watch/architecture/system-architecture/" class="md-tabs__link">
+        <a href="/temporal-io-tech-watch/reference/whats-new/" class="md-tabs__link">
           
   
   
     
   
-  Design & Architecture
+  Getting Started
 
         </a>
       </li>
@@ -278,13 +274,35 @@
     
     
       <li class="md-tabs__item">
-        <a href="/temporal-io-tech-watch/temporal-design-implementation-guide/" class="md-tabs__link">
+        <a href="/temporal-io-tech-watch/architecture/system-architecture/" class="md-tabs__link">
           
   
   
     
   
-  Implementation Guide
+  Architecture & Design
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="/temporal-io-tech-watch/implementation/infrastructure-setup/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Implementation
 
         </a>
       </li>
@@ -322,7 +340,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/temporal-io-tech-watch/security/auth/" class="md-tabs__link">
+        <a href="/temporal-io-tech-watch/security/best-practices/" class="md-tabs__link">
           
   
   
@@ -366,7 +384,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/temporal-io-tech-watch/reference/whats-new/" class="md-tabs__link">
+        <a href="/temporal-io-tech-watch/reference/configuration/" class="md-tabs__link">
           
   
   
@@ -383,7 +401,13 @@
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -400,7 +424,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="/temporal-io-tech-watch/." title="Temporal.io Tech Watch" class="md-nav__button md-logo" aria-label="Temporal.io Tech Watch" data-md-component="logo">
       
@@ -460,10 +486,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -487,7 +509,7 @@
   
   
   <span class="md-ellipsis">
-    Design & Architecture
+    Getting Started
     
   </span>
   
@@ -498,7 +520,115 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Design & Architecture
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/temporal-io-tech-watch/reference/whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What's New in 1.29
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/temporal-io-tech-watch/temporal-design-implementation-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Implementation Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture & Design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture & Design
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -532,12 +662,12 @@
   
   
     <li class="md-nav__item">
-      <a href="/temporal-io-tech-watch/architecture/security-design/" class="md-nav__link">
+      <a href="/temporal-io-tech-watch/architecture/database-design/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Security Design
+    Database Design
     
   </span>
   
@@ -578,12 +708,12 @@
   
   
     <li class="md-nav__item">
-      <a href="/temporal-io-tech-watch/architecture/database-design/" class="md-nav__link">
+      <a href="/temporal-io-tech-watch/architecture/security-design/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Database Design
+    Security Design
     
   </span>
   
@@ -622,8 +752,6 @@
       
         
       
-        
-      
     
     
     
@@ -639,15 +767,15 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Implementation Guide
+    Implementation
     
   </span>
   
@@ -655,35 +783,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Implementation Guide
+            Implementation
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/temporal-io-tech-watch/temporal-design-implementation-guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Complete Guide
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -715,12 +820,12 @@
   
   
     <li class="md-nav__item">
-      <a href="/temporal-io-tech-watch/implementation/security-configuration/" class="md-nav__link">
+      <a href="/temporal-io-tech-watch/implementation/database-setup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Security Configuration
+    Database Setup
     
   </span>
   
@@ -738,12 +843,12 @@
   
   
     <li class="md-nav__item">
-      <a href="/temporal-io-tech-watch/implementation/database-setup/" class="md-nav__link">
+      <a href="/temporal-io-tech-watch/implementation/security-configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Database Setup
+    Security Configuration
     
   </span>
   
@@ -812,7 +917,7 @@
   
   
   <span class="md-ellipsis">
-    Upgrade Guide
+    Upgrade Guide (1.27→1.29)
     
   </span>
   
@@ -864,10 +969,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -880,8 +985,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Development
           </label>
@@ -1043,10 +1148,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -1059,12 +1164,35 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Security
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/temporal-io-tech-watch/security/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security Best Practices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1158,29 +1286,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/temporal-io-tech-watch/security/best-practices/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Security Best Practices
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1218,10 +1323,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -1234,8 +1339,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             GitOps & Deployment
           </label>
@@ -1336,8 +1441,6 @@
       
         
       
-        
-      
     
     
     
@@ -1353,10 +1456,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -1369,35 +1472,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/temporal-io-tech-watch/reference/whats-new/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    What's New
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1528,22 +1608,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -1570,12 +1634,14 @@
       
         <footer class="md-footer">
   
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024 brunseba
+      Copyright &copy; 2024-2025 brunseba | Temporal.io 1.29.1 | Updated November 2025
     </div>
   
   
@@ -1634,7 +1700,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/temporal-io-tech-watch/", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.path", "navigation.indexes", "search.highlight", "search.share", "search.suggest", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.action.edit", "content.action.view", "content.tooltips"], "search": "/temporal-io-tech-watch/assets/javascripts/workers/search.d50fe291.min.js", "tags": {"argocd": "ArgoCD", "authentik": "Authentik SSO", "devops": "DevOps", "elasticsearch": "Elasticsearch", "fastapi": "FastAPI", "gitops": "GitOps", "helm": "Helm", "kubernetes": "Kubernetes", "monitoring": "Monitoring", "postgresql": "PostgreSQL", "production": "Production", "python": "Python", "security": "Security", "temporal": "Temporal.io", "vault": "HashiCorp Vault"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "/temporal-io-tech-watch/", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.path", "navigation.indexes", "navigation.tracking", "navigation.footer", "toc.follow", "toc.integrate", "search.highlight", "search.share", "search.suggest", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.action.edit", "content.action.view", "content.tooltips"], "search": "/temporal-io-tech-watch/assets/javascripts/workers/search.d50fe291.min.js", "tags": {"argocd": "ArgoCD", "authentik": "Authentik SSO", "devops": "DevOps", "elasticsearch": "Elasticsearch", "fastapi": "FastAPI", "gitops": "GitOps", "helm": "Helm Charts", "kubernetes": "Kubernetes", "monitoring": "Observability", "nexus": "Nexus", "postgresql": "PostgreSQL", "production": "Production Ready", "python": "Python SDK 1.18.2", "security": "Enterprise Security", "temporal": "Temporal.io 1.29.1", "upgrade": "Upgrade Guide", "vault": "HashiCorp Vault", "worker-versioning": "Worker Versioning"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
       <script src="/temporal-io-tech-watch/assets/javascripts/bundle.56ea9cef.min.js"></script>
