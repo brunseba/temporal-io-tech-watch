@@ -123,6 +123,7 @@ nav:
     - Database Setup: implementation/database-setup.md
     - Temporal Deployment: implementation/temporal-deployment.md
     - Application Deployment: implementation/application-deployment.md
+    - Upgrade Guide: implementation/upgrade-guide.md
   - Development:
     - Workflow Development: development/workflow-development.md
     - Python SDK Guide: development/python-sdk.md
