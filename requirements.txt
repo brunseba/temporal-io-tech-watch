@@ -9,6 +9,6 @@ mkdocs-mermaid2-plugin>=1.1.0
 mkdocs-minify-plugin>=0.7.0
 
 # Additional dependencies for advanced features
-pymdown-extensions>=10.0
+pymdown-extensions>=10.16.1
 markdown>=3.4
 Pygments>=2.16.0
